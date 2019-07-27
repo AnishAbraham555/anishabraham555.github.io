@@ -40,7 +40,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
         // set the size and create svg
         var width = 1050;
-        var height = 600;
+        var height = 500;
         var svg = d3.select("body")
                     .append("svg")
                     .attr("width", width)
@@ -79,8 +79,6 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             .append("path")
             .attr("d", path)
             .attr("class","map_path")
-            .attr('stroke', 'rgba(255,255,255,1)') // set stroke
-            .attr('stroke-width', 1)
             .style("fill", function(d) {
                 // fill in the color got by Profit in the scale
                 var value = d.properties.Profit;
