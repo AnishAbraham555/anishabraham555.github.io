@@ -152,8 +152,24 @@ d3.csv("data/Global Superstore.csv", function(dataread){
 	// show dafault page
 	update();
 
+	var slider = d3
+    		.sliderHorizontal()
+    		.min(0)
+    		.max(10)
+    		.step(1)
+    		.width(300)
+    		.displayValue(false)
+    		.on('onchange', val => {
+    			  d3.select('#value').text(value);
+    });
 	// read data from the slider when it slides
 	d3.select("#month_slider")
+		.append('svg')
+    		.attr('width', 500)
+   		 .attr('height', 100)
+   		 .append('g')
+   		 .attr('transform', 'translate(30,30)')
+   		 .call(slider)
 		.on("input", function () {
 			month_index = Number(this.value);
 			update();
@@ -201,7 +217,7 @@ d3.csv("data/Global Superstore.csv", function(dataread){
 				var show_year = parseInt(month_index/12) + 2011;
 				var show_month = month_index - 12*(show_year-2011) +1;
 				// display data in the tooltip
-				tooltip.html(d.country + "<br />Time: " + show_year + "/" + show_month
+				tooltip.html(d.country + "<br />Year: " + show_year + "/" + show_month
 										+ "<br />Profit: $" + show_profit
 										+ "<br />Cost: $" + show_cost
 										+ "<br />Amount: " + d.amount[month_index])
