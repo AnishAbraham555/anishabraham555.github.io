@@ -152,24 +152,8 @@ d3.csv("data/Global Superstore.csv", function(dataread){
 	// show dafault page
 	update();
 
-	var slider = d3
-    		.sliderHorizontal()
-    		.min(0)
-    		.max(10)
-    		.step(1)
-    		.width(300)
-    		.displayValue(false)
-    		.on('onchange', val => {
-    			  d3.select('#value').text(value);
-    });
 	// read data from the slider when it slides
 	d3.select("#month_slider")
-		.append('svg')
-    		.attr('width', 500)
-   		 .attr('height', 100)
-   		 .append('g')
-   		 .attr('transform', 'translate(30,30)')
-   		 .call(slider)
 		.on("input", function () {
 			month_index = Number(this.value);
 			update();
