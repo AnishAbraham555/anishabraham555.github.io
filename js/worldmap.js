@@ -176,7 +176,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
     var y = d3.scaleLinear()
       .range([300, 0])
-      .domain([-50000, 50000]);
+      .domain([100, 0]);
 
     var yAxis = d3.axisBottom()
       .scale(y)
@@ -192,6 +192,13 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("axis title");
+        
+   var myText =  svg.append("text")
+   .attr("y", height - 10)//magic number here
+   .attr("x", function(){ return x(lineEnd)})
+   .attr('text-anchor', 'middle')
+   .attr("class", "myLabel")//easy to style with CSS
+   .text("Loss to Profit");
     });
 });
 
