@@ -155,7 +155,6 @@ d3.csv("data/Global Superstore.csv", function(dataread){
 	// read data from the slider when it slides
 	d3.select("#month_slider")
 	        .append("g")
-		.append("text")
        		.text("Month Slider");
 		.on("input", function () {
 			month_index = Number(this.value);
