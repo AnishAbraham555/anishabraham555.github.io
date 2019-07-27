@@ -194,8 +194,8 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
       .text("axis title");
         
    var myText =  svg.append("text")
-   .attr("height", height - 10)//magic number here
-   .attr("width", 5)
+   .attr("height", h - 10)//magic number here
+   .attr("width", w+15)
    .attr('text-anchor', 'middle')
    .attr("class", "myLabel")//easy to style with CSS
    .text("Loss to Profit");
