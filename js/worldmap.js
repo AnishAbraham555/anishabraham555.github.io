@@ -193,7 +193,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
       .style("text-anchor", "end")
       .text("axis title");
         
-   var myText =  key.append("text")
+   var myText =  svg.append("text")
    .attr("y", height - 10)//magic number here
    .attr("x", function(){ return x(lineEnd)})
    .attr('text-anchor', 'middle')
