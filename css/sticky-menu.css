@@ -60,11 +60,17 @@ html {
     text-align: center;
     background: #fff;
 }
-.contact-section {
+.new-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: #EFDECD;
+}
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #fff;
 }
 .navbar-default .navbar-nav > li > a:hover {
 	color: #333;
