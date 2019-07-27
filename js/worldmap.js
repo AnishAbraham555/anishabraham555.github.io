@@ -176,7 +176,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
     var y = d3.scaleLinear()
       .range([200, 0])
-      .domain(['Profilt', 'Loss']);
+      .domain([-50000, 50000]);
 
     var yAxis = d3.axisBottom()
       .scale(y)
