@@ -72,8 +72,8 @@ function dashboard(id, dataset){
         
         // set the size and create svg for histogram
         var hGDim = {t: 60, r: 0, b: 30, l: 0};
-        hGDim.w = 500 - hGDim.l - hGDim.r, 
-        hGDim.h = 300 - hGDim.t - hGDim.b;            
+        hGDim.w = 250 - hGDim.l - hGDim.r, 
+        hGDim.h = 150 - hGDim.t - hGDim.b;            
         var hGsvg = d3.select(id)
                     .append("svg")
                     .attr("width", hGDim.w + hGDim.l + hGDim.r)
@@ -166,7 +166,7 @@ function dashboard(id, dataset){
         var pC ={};
 
         // set the size and create svg for pie chart
-        var pCDim ={w:250, h: 250};
+        var pCDim ={w:100, h: 100};
         pCDim.r = Math.min(pCDim.w, pCDim.h) / 2;
         var pCsvg = d3.select(id)
                         .append("svg")
