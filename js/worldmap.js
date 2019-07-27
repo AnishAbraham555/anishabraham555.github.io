@@ -144,7 +144,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
         // Legend Gradient bar
         var w = 300, h = 50;
 
-    var key = d3.select("path")
+    var key = d3.select("body")
       .append("svg")
       .attr("width", w)
       .attr("height", h);
