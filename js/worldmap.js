@@ -79,6 +79,8 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             .append("path")
             .attr("d", path)
             .attr("class","map_path")
+            .attr('stroke', 'rgba(255,255,255,1)') // set stroke
+            .attr('stroke-width', 1)
             .style("fill", function(d) {
                 // fill in the color got by Profit in the scale
                 var value = d.properties.Profit;
