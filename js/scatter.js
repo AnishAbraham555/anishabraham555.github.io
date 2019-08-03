@@ -83,7 +83,11 @@ d3.csv("data/Global Superstore.csv", function(dataread){
 	// read data from the slider in the page (the default month)
 	var month_index = Number(document.getElementById("month_slider").value);
 	var output = document.getElementById("svalue");
-	output.innerHTML = month_index.value;
+	if (typeof output === "undefined") {
+		output.innerHTML = 0; 
+	} else {
+		output.innerHTML = month_index.value;
+	}
 
 
 	//////////////////////CREATE AXES//////////////////////////
