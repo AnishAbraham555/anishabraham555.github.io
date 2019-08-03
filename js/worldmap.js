@@ -60,11 +60,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             width: 500
         }]
         
-        const makeAnnotations = d3.annotation()
-            .editMode(false)
-            .type(d3.annotationLabel)
-            .notePadding(10)
-            .annotations(annotations);
+        
         
         // set the size and create svg
         var width = 1050;
@@ -171,6 +167,12 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
                     else { return "#ccc";}
                 })
             });
+        const makeAnnotations = d3.annotation()
+            .editMode(false)
+            .type(d3.annotationLabel)
+            .notePadding(10)
+            .annotations(annotations);
+        
         svg.call(makeAnnotations);
         // Legend Gradient bar
         var w = 100, h = 50;
