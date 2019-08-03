@@ -44,7 +44,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             label: "Whole USA looks great for Global superstore profit",
             bgPadding: 20,
             wrap: 200,
-            align: "left",
+            align: "center",
             title: "USA: Profit"
             },
             connector: {
