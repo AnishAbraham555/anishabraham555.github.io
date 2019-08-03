@@ -210,11 +210,11 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
     var y = d3.scaleLinear()
       .range([300, 0])
-      .domain([-10, 10]);
+      .domain([0, 1000]);
 
     var yAxis = d3.axisBottom()
       .scale(y)
-      .ticks(5);
+      .ticks(3);
 
     key.append("g")
       .attr("class", "y axis")
