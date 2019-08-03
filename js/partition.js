@@ -153,7 +153,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
 
   // add category names to the arcs
   arcs.append("text")
-      .style("font-size", "12px")
+      .style("font-size", "9px")
       .attr("text-anchor","middle")
       .attr("transform",function(d,i){
         // the first label, of the central circle, won't move
