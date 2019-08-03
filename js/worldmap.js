@@ -41,11 +41,11 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
         
         const annotations = [{
             note: {
-            label: "This is an annotation. Lorel ipsum cahARATERs abcfwvepkrjvperknervknrvjeknvkpeb.",
+            label: "Whole USA looks great for Global superstore profit",
             bgPadding: 20,
             wrap: 300,
             align: "left",
-            title: "Your choice"
+            title: "USA: Profit"
             },
             connector: {
                 end: "dot",  
@@ -54,8 +54,8 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
                 endScale: 2
             },
             className: "show-bg",
-            y: 10,
-            x: 10,
+            y: 100,
+            x: 80,
             dy: 60,
             width: 500
         }]
