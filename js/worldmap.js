@@ -40,7 +40,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
         // set the size and create svg
         var width = 1050;
-        var height = 500;
+        var height = 300;
         var svg = d3.select("body")
                     .append("svg")
                     .attr("width", width)
