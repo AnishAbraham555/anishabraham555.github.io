@@ -56,6 +56,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             className: "show-bg",
             y: 100,
             x: 80,
+            dx:60,
             dy: 60,
             width: 500
         }]
