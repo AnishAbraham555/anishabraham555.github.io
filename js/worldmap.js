@@ -58,7 +58,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             x: 250,
             dx: -200,
             dy: 60,
-            width: 150
+            width: 80
         }]
         
         
