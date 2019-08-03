@@ -96,7 +96,7 @@ d3.csv("data/Global Superstore.csv", function(dataread){
 	// set the size and margins
 	var margin = {top: 20, right: 20, bottom: 20, left: 40};
 	var frame_width = 1050;
-	var frame_height = 300;
+	var frame_height = 380;
 	var canvas_width = frame_width - margin.left - margin.right;
 	var canvas_height = frame_height - margin.top - margin.bottom;
 
