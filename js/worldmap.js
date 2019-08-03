@@ -62,6 +62,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
         
         const makeAnnotations = d3.annotation()
             .editMode(false)
+            .type(d3.annotationLabel)
             .notePadding(10)
             .annotations(annotations);
         
