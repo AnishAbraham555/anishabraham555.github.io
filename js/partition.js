@@ -80,7 +80,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
 
   // set the size and radius, and create the svg
   var width = 1050;
-  var height = 700;
+  var height = 300;
   var radius =  Math.min(width, height) / 2;
   var svg = d3.select('body').append('svg')
               .attr('class','axis')
