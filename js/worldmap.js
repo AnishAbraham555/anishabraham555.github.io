@@ -73,7 +73,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
                     .attr("width", width)
                     .attr("height", height)
         
-        svg.call(makeAnnotations);
+        
         
         // get the original size and zoom to fit the svg size
         var projection = d3.geoMercator();
@@ -170,6 +170,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
                     else { return "#ccc";}
                 })
             });
+        svg.call(makeAnnotations);
         // Legend Gradient bar
         var w = 100, h = 50;
 
