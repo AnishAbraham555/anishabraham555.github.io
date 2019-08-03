@@ -31,7 +31,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
   // create the dataset to store the relation of 
   // all cetegories and sub-categories and their profits
   var dataset = {
-    "name": "Commodity Categories and Profit",
+    "name": " ",
     "children":
         [
           {
