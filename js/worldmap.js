@@ -38,6 +38,33 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
             }
         }
 
+        
+        const annotations = [{
+            note: {
+            label: "This is an annotation. Lorel ipsum cahARATERs abcfwvepkrjvperknervknrvjeknvkpeb.",
+            bgPadding: 20,
+            wrap: 300,
+            align: "left",
+            title: "Your choice"
+            },
+            connector: {
+                end: "dot",  
+                type: "line",      
+                lineType : "vertical",
+                endScale: 2
+            },
+            className: "show-bg",
+            y: 10,
+            x: 10,
+            dy: 60,
+            width: 500
+        }]
+        
+        const makeAnnotations = d3.annotation()
+            .editMode(false)
+            .notePadding(10)
+            .annotations(annotations);
+        
         // set the size and create svg
         var width = 1050;
         var height = 350;
@@ -45,7 +72,9 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
                     .append("svg")
                     .attr("width", width)
                     .attr("height", height)
-
+        
+        svg.call(makeAnnotations);
+        
         // get the original size and zoom to fit the svg size
         var projection = d3.geoMercator();
         var oldScala = projection.scale();
