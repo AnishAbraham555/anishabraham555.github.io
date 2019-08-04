@@ -38,7 +38,7 @@ const makeAnnotations = d3.annotation()
   .notePadding(10)
   .annotations(annotations)
 
-var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
+var colors = d3.scaleOrdinal(d3.schemeCategory10);
 var margin = {top: 20, right: 40, bottom: 100, left: 50},
     width = 1050 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
@@ -87,12 +87,14 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .text("Avg City Mileage");
   svg.selectAll("bar")
       .data(data)
-      .enter().append("circle")
-      .style("fill", function(d,i) { return colors_a(i); })
+      .enter().append("rect")
+      .style("fill", function(d,i) { return colors(i); })
       .style("opacity", 1)
+      .attr("x", function(d,i) { return x(d.Make); })
+      .attr("width", x.bandwidth())
       .attr("cx", function(d) { return x(d.Make); })
-      .attr("r", function(d) { return d.AverageCityMPG; })
-      .attr("cy", function(d) { return y(d.AverageCityMPG); })
+      .attr("y", function(d) { return y(d.AverageCityMPG); })
+      .attr("height", function(d) { return y(0) - y(d.AverageCityMPG); })
       .on("mouseover", function(d) {
           tooltip.transition()
                .style("opacity", 1);
