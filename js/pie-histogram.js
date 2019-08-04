@@ -202,7 +202,7 @@ function dashboard(id, dataset){
             .notePadding(10)
             .annotations(annotations);
         
-        pCsvg.call(makeAnnotations);
+        // pCsvg.call(makeAnnotations);
 
         // create function to draw the arcs of the pie slices
         var arc = d3.svg.arc()
