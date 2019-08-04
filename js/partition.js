@@ -115,7 +115,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
             .notePadding(10)
             .annotations(annotations);
   
-  svg.call(makeAnnotations);
+
   // create the partition
   var partition = d3.layout.partition()
                 .sort(null) // don't sort
@@ -201,5 +201,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
                 + "rotate(" + r + ")";
       })
       .text(function(d) { return d.name; });
+  
+    arcs.call(makeAnnotations);
 
 })
