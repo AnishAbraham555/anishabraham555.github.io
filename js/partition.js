@@ -176,6 +176,10 @@ d3.csv("data/Global Superstore.csv",function(dataread){
           .style("fill", function(d) { 
             return color((d.children ? d : d.parent).name); 
           });
+         d3.select("svg")
+            .append("g")
+            .attr("class", "annotation-group")
+            .call(makeAnnotations);
       });
 
   // add category names to the arcs
@@ -202,10 +206,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
       })
       .text(function(d) { return d.name; });
   
-      d3.select("svg")
-            .append("g")
-            .attr("class", "annotation-group")
-            .call(makeAnnotations);
+
   
 //arcs.call(makeAnnotations);
 
