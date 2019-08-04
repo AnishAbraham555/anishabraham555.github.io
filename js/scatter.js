@@ -89,7 +89,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
 	
 	svg.append("g")
             .attr("class", "brush")
-            .call(brush);
+            .call(brush).on("dblclick", brushcentered);;
 	
 	var brush = d3.brush().extent([[0, 0], [width, height]]).on("end", brushended),
             idleTimeout,
@@ -111,6 +111,11 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
 	function idled() {
             idleTimeout = null;
 	}
+	function brushcentered() {
+      		x.domain(0,d3.max(data, function (d) { return d.AverageHighwayMPG; }));
+      		y.domain(0,d3.max(data, function (d) { return d.AverageCityMPG; }));
+      		svg.select(".brush").call(brush.move, null);
+    	}
 	function zoom() {
             var t = scatter.transition().duration(700);
             svg.select("#axis--x").transition(t).call(xAxis);
