@@ -7,10 +7,7 @@ const annotations = [{
     title: "Engine Cylinders"
   },
   connector: {
-      end: "dot",   
-      type: "line",  
-      lineType : "vertical",
-      endScale: 2
+      end: "arrow"
     },
   className: "show-bg",
   x: 500,
