@@ -12,7 +12,7 @@ const annotations = [{
   className: "show-bg",
   x: 780,
   y: 230,
-  dy: -160,
+  dy: -180,
   dx: 0,
   width: 100
 }, {
@@ -30,8 +30,8 @@ const annotations = [{
   x: 400,
   y: 0,
   dy: 0,
-  dx: 80,
-  width: 100                   
+  dx: 20,
+  width: 80                   
 }                  ]
 const makeAnnotations = d3.annotation()
   .editMode(false)
@@ -99,8 +99,6 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           tooltip.transition()
                .style("opacity", 1);
           tooltip.html("" + d.AverageHighwayMPG + "")
-               .style("background", "#eee")
-               .style("font-size", "12px")
                .style("left", (d3.event.pageX + 8) +"px")
                .style("top", (d3.event.pageY - 30) + "px");
       })
