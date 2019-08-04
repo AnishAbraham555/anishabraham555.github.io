@@ -58,7 +58,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   svg.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
-                           (height + margin.top + 100) + ")")
+                           (height + margin.top + 80) + ")")
       .style("text-anchor", "middle")
       .text("Cars");
   svg.append("g")
