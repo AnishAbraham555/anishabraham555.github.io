@@ -78,6 +78,27 @@ d3.csv("data/Global Superstore.csv",function(dataread){
         ]
   }
 
+  const annotations = [{
+            note: {
+            label: "Whole USA looks great for Global superstore profit",
+            bgPadding: 20,
+            wrap: 200,
+            align: "center",
+            title: "USA: Profit"
+            },
+            connector: {
+                end: "dot",  
+                type: "line",      
+                lineType : "vertical",
+                endScale: 2
+            },
+            className: "show-bg",
+            y: 100,
+            x: 250,
+            dx: -200,
+            dy: 60,
+            width: 80
+        }]
   // set the size and radius, and create the svg
   var width = 1050;
   var height = 460;
@@ -174,4 +195,12 @@ d3.csv("data/Global Superstore.csv",function(dataread){
                 + "rotate(" + r + ")";
       })
       .text(function(d) { return d.name; });
+  
+     const makeAnnotations = d3.annotation()
+            .editMode(false)
+            .type(d3.annotationLabel)
+            .notePadding(10)
+            .annotations(annotations);
+        
+        svg.call(makeAnnotations);
 })
