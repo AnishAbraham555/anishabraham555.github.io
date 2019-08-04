@@ -25,7 +25,7 @@ const makeAnnotations = d3.annotation()
 var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
 var margin = {top: 10, right: 10, bottom: 50, left: 30},
     width = 1100 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 450 - margin.top - margin.bottom;
 var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
