@@ -38,6 +38,8 @@ var xmap = function (d) { return parseInt(d.AverageCityMPG); }
 var ymap = function (d) { return parseInt(d.AverageHighwayMPG); }
 
 d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
+  var xExtent = d3.extent(data, function (d) { return d.AverageHighwayMPG; });
+  var yExtent = d3.extent(data, function (d) { return d.AverageCityMPG; });
   x.domain([0,d3.max(data,xmap)])
   y.domain([0,d3.max(data,ymap)])
   function brushended() {
