@@ -95,10 +95,12 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .attr("cy", function(d) { return y(d.EngineCylinders); })
       .on("mouseover", function(d) {
           tooltip.transition()
-               .style("opacity", 1);
+               .style("opacity", .6);
           tooltip.html("" + d.EngineCylinders + "")
-               .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+               .style("background", #eee)
+               .style("font-size", "12px")
+               .style("left", "130px")
+               .style("top", "95px");
       });
 
 });
