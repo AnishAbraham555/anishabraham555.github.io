@@ -109,7 +109,7 @@ d3.csv("data/Global Superstore.csv",function(dataread){
               .attr('height',height)
               .append('g')
               .attr("transform", "translate(" + width/2 + "," + radius*0.9 + ")");
-  
+  svg.call(makeAnnotations);
   // create the partition
   var partition = d3.layout.partition()
                 .sort(null) // don't sort
