@@ -1,8 +1,8 @@
 const annotations = [{
   note: {
-    label: "Every car has cylinders, and the engine size is generally denoted by how many cylinders a car.",
+    label: "Every car has cylinders, and the engine size is generally denoted by how many cylinders a car has.",
     bgPadding: 20,
-    wrap: 100,
+    wrap: 200,
     align: "left",
     title: "Engine Cylinders"
   },
@@ -13,7 +13,8 @@ const annotations = [{
       endScale: 2
     },
   className: "show-bg",
-  x: 700,
+  x: 500,
+  y: 200,
   dy: 30,
   dx: 100,
   width: 500
