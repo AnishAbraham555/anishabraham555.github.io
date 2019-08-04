@@ -119,16 +119,16 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .on("mouseover", function(d,i) {
           d3.select(this).attr("r",10);
           tooltip.transition()
-               .duration(200)
+               .duration(100)
                .style("opacity", .8);
-	  tooltip.html("City MPG : " + ymap(d) + "<br/> Hway MPG : " + xmap(d) )
-               .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+	  tooltip.html("City MPG : " + ymap(d) + "<br/> " )
+               .style("left", (d3.event.pageX + 10) + "px")
+               .style("top", (d3.event.pageY - 30) + "px");
       })
       .on("mouseout", function(d) {
           d3.select(this).attr("r",5);
           tooltip.transition()
-               .duration(500)
+               .duration(400)
                .style("opacity", 0);
       });
 	
