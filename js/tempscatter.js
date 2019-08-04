@@ -36,6 +36,7 @@ var clip = svg.append("defs").append("svg:clipPath")
 
 var xmap = function (d) { return parseInt(d.AverageCityMPG); }
 var ymap = function (d) { return parseInt(d.AverageHighwayMPG); }
+var zmap = function (d) { return d.Make; }
 
 d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   //var xExtent = d3.extent(data, function (d) { return d.AverageHighwayMPG; });
@@ -120,7 +121,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           tooltip.transition()
                .duration(100)
                .style("opacity", 1);
-	  tooltip.html("City MPG : " + ymap(d) + " <br/> Hwy MPG : " + xmap(d))
+	  tooltip.html("City MPG : " + ymap(d) + " <br/> Hwy MPG : " + xmap(d) + " <br/> Make : " + zmap(d))
                .style("left", (d3.event.pageX + 10) + "px")
                .style("top", (d3.event.pageY - 30) + "px");
       })
