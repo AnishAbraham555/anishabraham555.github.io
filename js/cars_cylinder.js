@@ -48,12 +48,10 @@ var tooltip = d3.select("body")
     .style("opacity", 0.0);
 var x = d3.scaleBand().rangeRound([0, width], 0.5)
 var y = d3.scaleLinear().range([height, 0]);
-//var xAxis = d3.axisBottom(x);
-//var yAxis = d3.axisLeft(y);
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 svg.call(makeAnnotations);
@@ -66,10 +64,10 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
-    .selectAll("text")
+      .selectAll("text")
       .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", "-.55em")
+      .attr("dx", "-.7em")
+      .attr("dy", "-.5em")
       .attr("transform", "rotate(-90)" );
   svg.append("text")             
       .attr("transform",
@@ -80,16 +78,16 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   svg.append("g")
       .attr("class", "y axis")
       .call(d3.axisLeft(y))
-    .append("text")
+      .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 )
+      .attr("y", 400 )
       .attr("x",0)
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("EngineCylinders");
   svg.selectAll("bar")
       .data(data)
-    .enter().append("circle")
+      .enter().append("circle")
       .style("fill", function(d,i) { return colors_a(i); })
       .style("opacity", 1)
       .attr("cx", function(d) { return x(d.Make); })
