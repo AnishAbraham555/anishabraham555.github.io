@@ -5,7 +5,7 @@ var margin = {top: 20, right: 20, bottom: 70, left: 40},
 
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
-    .style("opacity", 0.3);
+    .style("opacity", 0);
 
 var x = d3.scaleLinear()          
           .range([0, width])
