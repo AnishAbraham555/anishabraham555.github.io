@@ -20,6 +20,28 @@ const makeAnnotations = d3.annotation()
   .editMode(false)
   .notePadding(10)
   .annotations(annotations)
+const annotations1 = [{
+  note: {
+    label: "More cylinders means more power and hence less mileage",
+    bgPadding: 10,
+    wrap: 400,
+    align: "left",
+    title: "Power vs Mileage"
+  },
+  connector: {
+      end: "arrow"
+    },
+  className: "show-bg",
+  x: 550,
+  y: 20,
+  dy: 10,
+  dx: 80,
+  width: 300
+}]
+const makeAnnotations1 = d3.annotation()
+  .editMode(false)
+  .notePadding(10)
+  .annotations(annotations1)
 var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
 var margin = {top: 20, right: 40, bottom: 100, left: 40},
     width = 1050 - margin.left - margin.right,
@@ -39,6 +61,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 svg.call(makeAnnotations);
+svg.call(makeAnnotations1);
 
 d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
     console.log(data);
