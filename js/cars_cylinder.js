@@ -32,8 +32,8 @@ var tooltip = d3.select("body")
     .style("opacity", 0.0);
 var x = d3.scaleBand().rangeRound([0, width], 0.5)
 var y = d3.scaleLinear().range([height, 0]);
-var xAxis = d3.axisBottom(x);
-var yAxis = d3.axisLeft(y);
+//var xAxis = d3.axisBottom(x);
+//var yAxis = d3.axisLeft(y);
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -49,15 +49,20 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-    .selectAll("text")
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", "-.55em")
-      .attr("transform", "rotate(-90)" );
+      .call(d3.axisBottom(x))
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Cars");
+    //.selectAll("text")
+    //  .style("text-anchor", "end")
+    //  .attr("dx", "-.8em")
+    //  .attr("dy", "-.55em")
+     // .attr("transform", "rotate(-90)" );
   svg.append("g")
       .attr("class", "y axis")
-      .call(yAxis)
+      .call(d3.axisLeft(y))
     .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
