@@ -103,6 +103,9 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
                .style("font-size", "12px")
                .style("left", (d3.event.pageX + 8) +"px")
                .style("top", (d3.event.pageY - 30) + "px");
-      });
+      })
+      .on("mouseout",function(d){
+          tooltip.style("opacity",0.0); // set as transparent          
+       });
 
 });
