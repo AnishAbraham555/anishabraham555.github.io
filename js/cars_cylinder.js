@@ -88,9 +88,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   svg.selectAll("bar")
       .data(data)
       .enter().append("circle")
-      .transition()
-      .delay(function(d,i){return(i*5)})
-      .duration(2000)
+      
       .style("fill", function(d,i) { return colors(i); })
       .style("opacity", 1)
       .attr("cx", function(d) { return x(d.Make); })
