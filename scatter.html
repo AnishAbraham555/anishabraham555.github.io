@@ -16,10 +16,19 @@
 			 background-color: yellow;
 			 border-radius: 5px;
 		  }
+		.button {
+       			 display: inline-block;
+       			 padding: 3px 5px;
+        		border: 1px solid #000;
+        		background: #eee;
+    		}
+			
 		</style>
 	</head>
 	<body>
-		<button type="button">Click Me!</button>
+		
+		<input type="button" value="Reload Page" onClick="document.location.reload(true)">
+		<a href="url" class="button">text</a>
 		<div id = "container"></div>
 		<script src='https://d3js.org/d3.v4.min.js'></script>
 		<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
