@@ -87,7 +87,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
             .style("text-anchor", "end")
             .text("Y Label");
 	
-	scatter.append("g")
+	svg.append("g")
             .attr("class", "brush")
             .call(brush);
 	
