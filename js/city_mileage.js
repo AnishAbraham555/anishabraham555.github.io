@@ -2,7 +2,7 @@ const annotations = [{
   note: {
     label: "Cars with more power tend to have low mileage",
     bgPadding: 10,
-    wrap: 400,
+    wrap: 200,
     align: "left",
     title: "Gas Eaters"
   },
@@ -10,7 +10,7 @@ const annotations = [{
       end: "arrow"
     },
   className: "show-bg",
-  x: 800,
+  x: 780,
   y: 230,
   dy: -140,
   dx: 0,
