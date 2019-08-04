@@ -90,6 +90,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .enter().append("rect")
       .transition()
       .ease(d3.easeLinear)
+       .delay(2000)
       .duration(2000)
       .style("fill", function(d,i) { return colors(i); })
       .style("opacity", 1)
