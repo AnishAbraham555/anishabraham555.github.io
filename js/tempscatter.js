@@ -5,7 +5,7 @@ var margin = {top: 20, right: 20, bottom: 70, left: 40},
 
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
-    .style("opacity", 0.3);
+    .style("opacity", 1);
 
 var x = d3.scaleLinear()          
           .range([0, width])
@@ -118,9 +118,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .attr("cy", function(d) { return y(d.AverageCityMPG); })
       .on("mouseover", function(d,i) {
           d3.select(this).attr("r",10);
-          tooltip.transition()
-               .duration(100)
-               .style("opacity", 1);
+          
 	  tooltip.html("City MPG : " + ymap(d) + " <br/> Hwy MPG : " + xmap(d) + " <br/> Make : " + zmap(d))
                .style("left", (d3.event.pageX + 10) + "px")
                .style("top", (d3.event.pageY - 30) + "px");
