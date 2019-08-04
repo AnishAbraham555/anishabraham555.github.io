@@ -1,8 +1,8 @@
 const annotations = [{
   note: {
-    label: "A cylinder is the power unit of an engine; Most cars and SUV engines have four, six, or eight cylinders. The more the cylinders  more the power.",
+    label: "Every car has cylinders, and the engine size is generally denoted by how many cylinders a car.",
     bgPadding: 20,
-    wrap: 300,
+    wrap: 100,
     align: "left",
     title: "Engine Cylinders"
   },
@@ -13,9 +13,9 @@ const annotations = [{
       endScale: 2
     },
   className: "show-bg",
-  x: 600,
-  dy: 40,
-  dx: 10,
+  x: 700,
+  dy: 30,
+  dx: 100,
   width: 500
 }]
 const makeAnnotations = d3.annotation()
@@ -23,7 +23,7 @@ const makeAnnotations = d3.annotation()
   .notePadding(10)
   .annotations(annotations)
 var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
-var margin = {top: 10, right: 40, bottom: 100, left: 40},
+var margin = {top: 20, right: 40, bottom: 100, left: 40},
     width = 1050 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 var tooltip = d3.select("body")
