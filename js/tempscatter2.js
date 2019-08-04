@@ -8,7 +8,7 @@ var svg = d3.select("svg"),
             width = 1050,
             height = 450;
 var g = svg.append("g")
-            .attr("transform", "translate(" + 150 + "," + 150 + ")");
+            .attr("transform", "translate(" + 450 + "," + 150 + ")");
 
 
 d3.csv("https://flunky.github.io/cars2017.csv")
