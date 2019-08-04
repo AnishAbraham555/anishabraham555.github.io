@@ -1,3 +1,5 @@
+async function init() {
+
 var xScale = d3.scaleLog().domain([10,150]).range([0,width]);
 var yScale = d3.scaleLog().domain([10,150]).range([height,0]);
 
@@ -41,3 +43,5 @@ g.selectAll("circle")
          .call(d3.axisBottom(xScale).tickValues([10, 20, 50, 100]).tickFormat(d3.format("~s")));
 
 });
+	
+}
