@@ -11,9 +11,9 @@ const annotations = [{
     },
   className: "show-bg",
   x: 800,
-  y: 200,
-  dy: -200,
-  dx: 50,
+  y: 230,
+  dy: -140,
+  dx: 0,
   width: 100
 }, {
  note: {
@@ -27,9 +27,9 @@ const annotations = [{
       end: "arrow"
     },
   className: "show-bg",
-  x: 380,
+  x: 400,
   y: 0,
-  dy: 10,
+  dy: 0,
   dx: 80,
   width: 100                   
 }                  ]
