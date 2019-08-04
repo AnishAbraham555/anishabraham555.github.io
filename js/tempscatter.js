@@ -75,9 +75,9 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   var brush = d3.brush().on("end", brushended),
             idleTimeout,
             idleDelay = 350;
-  svg.append("g")
-            .attr("class", "brush")
-            .call(brush).on("dblclick", brushcentered);
+  //svg.append("g")
+  //          .attr("class", "brush")
+  //          .call(brush).on("dblclick", brushcentered);
  
   svg.append("g")
       .attr("class", "x axis")
@@ -128,5 +128,9 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
                .duration(500)
                .style("opacity", 0);
       });
+	
+	scatter.append("g")
+            .attr("class", "brush")
+            .call(brush);
 
 });
