@@ -123,21 +123,21 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .attr("class", "x axis")
       .attr('id', "x-axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-    .append("text")
-      .attr("x", width - 30)
-      .attr("dy", "5em")
+      .call(xAxis);
+  svg.append("text")
       .style("text-anchor", "end")
+      .attr("x", width)
+      .attr("y", height - 8)
       .text("AverageCityMPG");
-
   svg.append("g")
       .attr("class", "y axis")
       .attr('id', "y-axis")
-      .call(yAxis)
-    .append("text")
+      .call(yAxis);
+	
+  svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
-      .attr("dy", ".71em")
+      .attr("dy", "1em")
       .style("text-anchor", "end")
       .text("AverageHighwayMPG");
 
