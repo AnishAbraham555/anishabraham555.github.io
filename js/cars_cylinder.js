@@ -98,8 +98,6 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           tooltip.transition()
                .style("opacity", 1);
           tooltip.html("" + d.EngineCylinders + "")
-               .style("background", "#eee")
-               .style("font-size", "12px")
                .style("left", (d3.event.pageX + 8) +"px")
                .style("top", (d3.event.pageY - 30) + "px");
       })
