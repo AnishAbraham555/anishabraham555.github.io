@@ -23,8 +23,8 @@ const makeAnnotations = d3.annotation()
   .notePadding(10)
   .annotations(annotations)
 var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
-var margin = {top: 10, right: 30, bottom: 50, left: 40},
-    width = 1100 - margin.left - margin.right,
+var margin = {top: 10, right: 30, bottom: 80, left: 40},
+    width = 1050 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 var tooltip = d3.select("body")
     .append("div")
@@ -58,7 +58,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   svg.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
-                           (height + margin.top + 20) + ")")
+                           (height + margin.top) + ")")
       .style("text-anchor", "middle")
       .text("Cars");
   svg.append("g")
