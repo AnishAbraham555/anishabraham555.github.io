@@ -158,23 +158,6 @@ function dashboard(id, dataset){
                 .text(function(d){ return d3.format(",")(d[1])})
                 .attr("y", function(d) {return y(d[1])-5; });            
         }
-
-        return hG;
-    }
-    
-    // function to handle pieChart
-    function pieChart(categoryData){
-        var pC ={};
-
-        // set the size and create svg for pie chart
-        var pCDim ={w:200, h: 200};
-        pCDim.r = Math.min(pCDim.w, pCDim.h) / 2;
-        var pCsvg = d3.select(id)
-                        .append("svg")
-                        .attr("width", pCDim.w)
-                        .attr("height", pCDim.h)
-                        .append("g")
-                        .attr("transform", "translate("+pCDim.w/2+","+pCDim.h/2+")");
         const annotations = [{
             note: {
             label: "Whole USA looks great for Global superstore profit",
@@ -202,7 +185,25 @@ function dashboard(id, dataset){
             .notePadding(10)
             .annotations(annotations);
         
-        // pCsvg.call(makeAnnotations);
+        hGsvg.call(makeAnnotations);
+
+        return hG;
+    }
+    
+    // function to handle pieChart
+    function pieChart(categoryData){
+        var pC ={};
+
+        // set the size and create svg for pie chart
+        var pCDim ={w:200, h: 200};
+        pCDim.r = Math.min(pCDim.w, pCDim.h) / 2;
+        var pCsvg = d3.select(id)
+                        .append("svg")
+                        .attr("width", pCDim.w)
+                        .attr("height", pCDim.h)
+                        .append("g")
+                        .attr("transform", "translate("+pCDim.w/2+","+pCDim.h/2+")");
+        
 
         // create function to draw the arcs of the pie slices
         var arc = d3.svg.arc()
