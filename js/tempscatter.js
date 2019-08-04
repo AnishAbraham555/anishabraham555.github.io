@@ -1,3 +1,43 @@
+const annotations = [{
+  note: {
+    label: "Correlation between city and Highway MPG",
+    bgPadding: 10,
+    wrap: 200,
+    align: "left",
+    title: "Efficiency"
+  },
+  connector: {
+      end: "arrow"
+    },
+  className: "show-bg",
+  x: 780,
+  y: 0,
+  dy: 0,
+  dx: 0,
+  width: 100
+}, {
+ note: {
+    label: "Use Mouse selection to zoom in",
+    bgPadding: 10,
+    wrap: 400,
+    align: "left",
+    title: "Zoom"
+  },
+  connector: {
+      end: "arrow"
+    },
+  className: "show-bg",
+  x: 780,
+  y: 800,
+  dy: 0,
+  dx: 0,
+  width: 100                   
+}                  ]
+const makeAnnotations = d3.annotation()
+  .editMode(false)
+  .notePadding(10)
+  .annotations(annotations)
+
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 var margin = {top: 20, right: 20, bottom: 70, left: 40},
     width = 1000 - margin.left - margin.right,
@@ -24,7 +64,7 @@ var svg = d3.select("body").append("svg")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
-
+svg.call(makeAnnotations);
 
 var clip = svg.append("defs").append("svg:clipPath")
             .attr("id", "clip")
