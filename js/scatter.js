@@ -17,9 +17,7 @@ var xAxis = d3.axisBottom(x),
     yAxis = d3.axisLeft(y);
 			
 
-var brush = d3.brush().extent([[0, 0], [width, height]]).on("end", brushended),
-            idleTimeout,
-            idleDelay = 350;
+
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -92,6 +90,10 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
 	scatter.append("g")
             .attr("class", "brush")
             .call(brush);
+	
+	var brush = d3.brush().extent([[0, 0], [width, height]]).on("end", brushended),
+            idleTimeout,
+            idleDelay = 350;
 	
 	function brushended() {
             var s = d3.event.selection;
