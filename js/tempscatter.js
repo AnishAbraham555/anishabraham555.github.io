@@ -116,8 +116,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", .8);
-          tooltip.html("(Highway MPG,City MPG) : " + "<br/> (" + xmap(d)
-	        + ", " + ymap(d) + ")")
+	  tooltip.html("City MPG : " + ymap(d) + "<br/> "Hway MPG : " + xmap(d) )
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
