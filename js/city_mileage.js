@@ -77,14 +77,15 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .text("Cars");
   svg.append("g")
       .attr("class", "y axis")
-      .call(d3.axisLeft(y))
-      .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 400 )
-      .attr("x",0)
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .text("Avg City Mileage");
+      .call(d3.axisLeft(y));
+  
+  svg.append("text")
+           .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", "1em")
+            .style("text-anchor", "end")
+            .text("Avg Mileage");
+  
   svg.selectAll("bar")
       .data(data)
       .enter().append("rect")
