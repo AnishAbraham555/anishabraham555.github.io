@@ -22,13 +22,14 @@ const makeAnnotations = d3.annotation()
   .editMode(false)
   .notePadding(10)
   .annotations(annotations)
-var colors_a = d3.scaleOrdinal(d3.schemeCategory20);
-var margin = {top: 20, right: 20, bottom: 70, left: 40},
-    width = 1000 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-var tooltip = d3.select("body").append("div")
+var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
+var margin = {top: 10, right: 10, bottom: 50, left: 30},
+    width = 1100 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+var tooltip = d3.select("body")
+    .append("div")
     .attr("class", "tooltip")
-    .style("opacity", 0.5);
+    .style("opacity", 0.0);
 var x = d3.scaleBand().rangeRound([0, width], 0.5)
 var y = d3.scaleLinear().range([height, 0]);
 var xAxis = d3.axisBottom(x);
@@ -73,7 +74,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .attr("cy", function(d) { return y(d.EngineCylinders); })
       .on("mouseover", function(d) {
           tooltip.transition()
-               .style("opacity", .8);
+               .style("opacity", 1);
           tooltip.html("" + d.EngineCylinders + "")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
