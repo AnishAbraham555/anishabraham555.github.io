@@ -12,7 +12,7 @@ const annotations = [{
   className: "show-bg",
   x: 760,
   y: 0,
-  dy: 0,
+  dy: 20,
   dx: 0,
   width: 100
 }, {
@@ -28,8 +28,8 @@ const annotations = [{
     },
   className: "show-bg",
   x: 760,
-  y: 600,
-  dy: 0,
+  y: 300,
+  dy: 10,
   dx: 0,
   width: 100                   
 }                  ]
