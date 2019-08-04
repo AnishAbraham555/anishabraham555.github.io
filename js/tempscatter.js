@@ -10,7 +10,7 @@ const annotations = [{
       end: "arrow"
     },
   className: "show-bg",
-  x: 760,
+  x: 560,
   y: 0,
   dy: 20,
   dx: 0,
