@@ -1,6 +1,6 @@
 async function init() {
 
-var width = 400, height = 400;
+var width = 1000, height = 600;
 var xScale = d3.scaleLog().domain([10,150]).range([0,width]);
 var yScale = d3.scaleLog().domain([10,150]).range([height,0]);
 
