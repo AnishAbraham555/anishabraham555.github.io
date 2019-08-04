@@ -166,5 +166,33 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 							.attr("y",function(d,i){ return padding.top * 2 + labHeight * i; })
 							.attr("dy",labRadius/2)
 							.text(function(d){ return d.name; });
+	const annotations = [{
+            note: {
+            label: "Whole USA looks great for Global superstore profit",
+            bgPadding: 20,
+            wrap: 200,
+            align: "center",
+            title: "USA: Profit"
+            },
+            connector: {
+                end: "dot",  
+                type: "line",      
+                lineType : "vertical",
+                endScale: 2
+            },
+            className: "show-bg",
+            y: 100,
+            x: 250,
+            dx: -200,
+            dy: 60,
+            width: 80
+        }]
+	const makeAnnotations = d3.annotation()
+            .editMode(false)
+            .type(d3.annotationLabel)
+            .notePadding(10)
+            .annotations(annotations);
+        
+        svg.call(makeAnnotations);
 })
 			
