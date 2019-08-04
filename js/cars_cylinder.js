@@ -1,8 +1,8 @@
 const annotations = [{
   note: {
     label: "Every car has cylinders, and the engine size is generally denoted by how many cylinders a car has.",
-    bgPadding: 20,
-    wrap: 200,
+    bgPadding: 10,
+    wrap: 400,
     align: "left",
     title: "Engine Cylinders"
   },
@@ -13,8 +13,8 @@ const annotations = [{
   x: 500,
   y: 200,
   dy: 30,
-  dx: 100,
-  width: 500
+  dx: 80,
+  width: 300
 }]
 const makeAnnotations = d3.annotation()
   .editMode(false)
