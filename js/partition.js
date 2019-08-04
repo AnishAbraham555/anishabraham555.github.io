@@ -202,5 +202,5 @@ d3.csv("data/Global Superstore.csv",function(dataread){
             .notePadding(10)
             .annotations(annotations);
         
-        svg.call(makeAnnotations);
+        arcs.call(makeAnnotations);
 })
