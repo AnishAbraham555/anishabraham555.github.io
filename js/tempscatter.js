@@ -120,8 +120,8 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           d3.select(this).attr("r",10);
           tooltip.transition()
                .duration(100)
-               .style("opacity", .8);
-	  tooltip.html("City MPG : " + ymap(d))
+               .style("opacity", 1);
+	  tooltip.html("City MPG : " + ymap(d) + " <br/> Hwy MPG : " + xmap(d)")
                .style("left", (d3.event.pageX + 10) + "px")
                .style("top", (d3.event.pageY - 30) + "px");
       })
