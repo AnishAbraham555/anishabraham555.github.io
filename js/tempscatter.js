@@ -1,6 +1,6 @@
 const annotations = [{
   note: {
-    label: "Correlation between city and Highway MPG",
+    label: "Correlation between city and Highway Mile Per Gallon",
     bgPadding: 10,
     wrap: 200,
     align: "left",
