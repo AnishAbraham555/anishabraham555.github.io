@@ -62,7 +62,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
 	// set the size and create svg
 	var width  = 1050;
-	var height = 500;
+	var height = 300;
 	var padding = { left:250, right:250, top:30, bottom:30 }; // the margin
 	var svg = d3.select("body")
 				.append("svg")
