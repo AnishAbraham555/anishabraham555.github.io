@@ -47,8 +47,8 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
                 x.domain(0,d3.max(data, function (d) { return d.AverageHighwayMPG; }));
                 y.domain(0,d3.max(data, function (d) { return d.AverageCityMPG; }));
             } else {
-                x.domain([selection[0][0], selection[1][0]+20].map(x.invert, x));
-                y.domain([selection[1][1], selection[0][1]+20].map(y.invert, y));
+                x.domain([selection[0][0], selection[1][0]].map(x.invert, x));
+                y.domain([selection[1][1], selection[0][1]].map(y.invert, y));
                 svg.select(".brush").call(brush.move).on("mousedown touchstart", brushcentered);;
             }
             zoomin();
@@ -109,8 +109,8 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .style("stroke", function (d,i) { return color(i*5); })
       .style("stroke-width",2)
       .attr("r", 5)
-      .attr("cx", function(d) { return x(xmap(d)); })
-      .attr("cy", function(d) { return y(ymap(d)); })
+      .attr("cx", function(d) { return x(d.AverageHighwayMPG); })
+      .attr("cy", function(d) { return y(d.AverageCityMPG); })
       .on("mouseover", function(d,i) {
           d3.select(this).attr("r",10);
           tooltip.transition()
