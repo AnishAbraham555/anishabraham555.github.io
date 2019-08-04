@@ -106,11 +106,14 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
              .attr("clip-path", "url(#clip)");
   scatter.selectAll("circle")
       .data(data)
-    .enter().append("circle")
+      .enter().append("circle")
+      .transition()
+      .delay(function(d,i){return(i*3)})
+      .duration(2000)
       .style("fill", function (d,i) { return color(i); })
       .style("stroke", function (d,i) { return color(i*5); })
       .style("stroke-width",2)
-      .attr("r", 5)
+      .attr("r", 6)
       .attr("cx", function(d) { return x(d.AverageHighwayMPG); })
       .attr("cy", function(d) { return y(d.AverageCityMPG); })
       .on("mouseover", function(d,i) {
