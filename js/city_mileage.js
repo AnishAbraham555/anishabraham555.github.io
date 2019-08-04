@@ -1,37 +1,37 @@
 const annotations = [{
   note: {
-    label: "Every car has cylinders, and the engine size is generally denoted by how many cylinders a car has.",
+    label: "Cars with more power tend to have low mileage",
     bgPadding: 10,
     wrap: 400,
     align: "left",
-    title: "Engine Cylinders"
+    title: "Gas Eaters"
   },
   connector: {
       end: "arrow"
     },
   className: "show-bg",
-  x: 500,
-  y: 200,
+  x: 900,
+  y: 250,
   dy: 15,
   dx: 80,
-  width: 300
+  width: 100
 }, {
  note: {
-    label: "More cylinders means more power and hence less mileage",
+    label: "Electric cars have more mileage",
     bgPadding: 10,
     wrap: 400,
     align: "left",
-    title: "Power vs Mileage"
+    title: "Electrified"
   },
   connector: {
       end: "arrow"
     },
   className: "show-bg",
-  x: 500,
+  x: 350,
   y: 20,
   dy: 10,
   dx: 80,
-  width: 300                   
+  width: 100                   
 }                  ]
 const makeAnnotations = d3.annotation()
   .editMode(false)
