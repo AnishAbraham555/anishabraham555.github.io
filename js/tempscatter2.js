@@ -1,5 +1,6 @@
 async function init() {
 
+var width = 400, height = 400;
 var xScale = d3.scaleLog().domain([10,150]).range([0,width]);
 var yScale = d3.scaleLog().domain([10,150]).range([height,0]);
 
@@ -7,7 +8,7 @@ var svg = d3.select("svg"),
             width = 1050,
             height = 450;
 var g = svg.append("g")
-            .attr("transform", "translate(" + 50 + "," + 50 + ")");
+            .attr("transform", "translate(" + 150 + "," + 150 + ")");
 
 
 d3.csv("https://flunky.github.io/cars2017.csv")
