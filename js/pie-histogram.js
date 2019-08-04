@@ -28,6 +28,7 @@ d3.csv("data/Global Superstore.csv", function(data) {
         technology[i] = parseInt(technology[i]);
     }
 
+    
     // create the dataset
     var dataset=[
         {Market:'Africa',prft:{Furniture:furniture[0], Office_Supplies:office[0], Technology:technology[0]}}
@@ -224,6 +225,34 @@ function dashboard(id, dataset){
             this._current = i(0);
             return function(t) { return arc(i(t));};
         }
+        const annotations = [{
+            note: {
+            label: "Whole USA looks great for Global superstore profit",
+            bgPadding: 20,
+            wrap: 200,
+            align: "center",
+            title: "USA: Profit"
+            },
+            connector: {
+                end: "dot",  
+                type: "line",      
+                lineType : "vertical",
+                endScale: 2
+            },
+            className: "show-bg",
+            y: 100,
+            x: 250,
+            dx: -200,
+            dy: 60,
+            width: 80
+        }]
+        const makeAnnotations = d3.annotation()
+            .editMode(false)
+            .type(d3.annotationLabel)
+            .notePadding(10)
+            .annotations(annotations);
+        
+        pCsvg.call(makeAnnotations);
 
         return pC;
     }
