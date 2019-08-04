@@ -1,6 +1,6 @@
 const annotations = [{
   note: {
-    label: "Cars with more power tend to have low mileage (Eletric cars are exceptions)",
+    label: "Cars with more power tend to have low mileage",
     bgPadding: 10,
     wrap: 200,
     align: "left",
