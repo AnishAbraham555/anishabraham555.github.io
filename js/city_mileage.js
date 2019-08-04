@@ -88,10 +88,6 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
   svg.selectAll("bar")
       .data(data)
       .enter().append("rect")
-      .transition()
-      .ease(d3.easeLinear)
-       .delay(2000)
-      .duration(2000)
       .style("fill", function(d,i) { return colors(i); })
       .style("opacity", 1)
       .attr("x", function(d,i) { return x(d.Make); })
@@ -103,8 +99,6 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           tooltip.transition()
                .style("opacity", 1);
           tooltip.html("" + d.AverageCityMPG + "")
-               .style("background", "#eee")
-               .style("font-size", "12px")
                .style("left", (d3.event.pageX + 8) +"px")
                .style("top", (d3.event.pageY - 30) + "px");
       })
