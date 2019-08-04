@@ -1,24 +1,26 @@
-var color = d3.scaleOrdinal(d3.schemeCategory20b);
+var color = d3.scaleOrdinal(d3.schemeCategory10);
 var margin = {top: 20, right: 20, bottom: 70, left: 40},
     width = 1000 - margin.left - margin.right,
-    height = 700 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
-    .style("opacity", 0.5);
+    .style("opacity", 0);
 
-var x = d3.scaleLinear().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
+var x = d3.scaleLinear()          
+          .range([0, width])
+          .nice();
+var y = d3.scaleLinear()
+          .range([height, 0]);
 
-var xAxis = d3.axisBottom(x)
-var yAxis = d3.axisLeft(y)
-
+var xAxis = d3.axisBottom(x),
+    yAxis = d3.axisLeft(y);
 
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", 
           "translate(" + margin.left + "," + margin.top + ")");
 
