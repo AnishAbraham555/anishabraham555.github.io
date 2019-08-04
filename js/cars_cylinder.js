@@ -23,9 +23,9 @@ const makeAnnotations = d3.annotation()
   .notePadding(10)
   .annotations(annotations)
 var colors_a = d3.scaleOrdinal(d3.schemeCategory10);
-var margin = {top: 10, right: 10, bottom: 50, left: 30},
+var margin = {top: 10, right: 30, bottom: 50, left: 40},
     width = 1100 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 var tooltip = d3.select("body")
     .append("div")
     .attr("class", "tooltip")
@@ -54,12 +54,12 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
             "translate(" + (width/2) + " ," + 
                            (height + margin.top + 20) + ")")
       .style("text-anchor", "middle")
-      .text("Cars");
-    //.selectAll("text")
-    //  .style("text-anchor", "end")
-    //  .attr("dx", "-.8em")
-    //  .attr("dy", "-.55em")
-     // .attr("transform", "rotate(-90)" );
+      .text("Cars")
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" );
   svg.append("g")
       .attr("class", "y axis")
       .call(d3.axisLeft(y))
