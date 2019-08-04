@@ -12,7 +12,7 @@ const annotations = [{
   className: "show-bg",
   x: 500,
   y: 200,
-  dy: 10,
+  dy: 15,
   dx: 80,
   width: 300
 }, {
