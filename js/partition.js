@@ -109,6 +109,12 @@ d3.csv("data/Global Superstore.csv",function(dataread){
               .attr('height',height)
               .append('g')
               .attr("transform", "translate(" + width/2 + "," + radius*0.9 + ")");
+  const makeAnnotations = d3.annotation()
+            .editMode(false)
+            .type(d3.annotationLabel)
+            .notePadding(10)
+            .annotations(annotations);
+  
   svg.call(makeAnnotations);
   // create the partition
   var partition = d3.layout.partition()
@@ -195,12 +201,5 @@ d3.csv("data/Global Superstore.csv",function(dataread){
                 + "rotate(" + r + ")";
       })
       .text(function(d) { return d.name; });
-  
-     const makeAnnotations = d3.annotation()
-            .editMode(false)
-            .type(d3.annotationLabel)
-            .notePadding(10)
-            .annotations(annotations);
-        
-        arcs.call(makeAnnotations);
+
 })
