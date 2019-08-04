@@ -1,53 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Scatter</title>
-    <style type="text/css">
-      .tooltip{
-       font-family: simsun;
-       font-size: 14px;
-       width: 120;
-       height: auto;
-       position: absolute;
-       text-align: center;
-         border-style: solid; 
-       border-width: 1px;
-       background-color: white;
-       border-radius: 5px;
-      }
-    </style>
-    <style type="text/css">
-      text { font: 10px sans-serif;}
-      .dot { stroke: #000;}
-      .label { fill: #777;}
-      .month.label {
-        font: 500 196px "Helvetica Neue";
-        fill: #ddd;
-      }
-      .month.label.active { fill: #aaa;}
-      .overlay {
-        fill: none;
-        pointer-events: all;
-        cursor: ew-resize;
-      }
-    </style>
-  </head>
-  <body>
-    <p id="chart_area"></p>
-    <input type="checkbox" name="Market" class="market_cb" value="Africa" checked="checked"> Africa
-    <input type="checkbox" name="Market" class="market_cb" value="APAC" checked="checked"> APAC
-    <input type="checkbox" name="Market" class="market_cb" value="Canada" checked="checked"> Canada
-    <input type="checkbox" name="Market" class="market_cb" value="EMEA" checked="checked"> EMEA
-    <input type="checkbox" name="Market" class="market_cb" value="EU" checked="checked"> EU
-    <input type="checkbox" name="Market" class="market_cb" value="LATAM" checked="checked"> LATAM
-    <input type="checkbox" name="Market" class="market_cb" value="US" checked="checked"> USA <br>
+	<head>
+		<meta charset="utf-8">
+		<title>scatter_plot</title>
+		<style type="text/css">
+		  .tooltip{
+			 font-family: simsun;
+			 font-size: 14px;
+			 width: 20px;
+			 height: 15px;
+			 position: absolute;
+			 text-align: center;
+		      border-style: solid; 
+			 border-width: 1px;
+			 background-color: grey;
+			 border-radius: 5px;
+		  }
+		</style>
+	</head>
+	<body>
 
-    <input type="range" name="range" class="slider" id="month_slider"
-           value="7" min="0" max="47" step="1" > <p>Month: <span id="svalue"></span></p>
-    
-    <script src="js/d3.v3.min.js" charset="utf-8"></script> 
-    <script src="js/d3.min.js"></script>
-    <script src="js/scatter.js"></script>
-  </body>
+		<div id = "container"></div>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+		<script type="text/javascript" src="js/scatter_plot.js" ></script>
+
+	</body>
 </html>
