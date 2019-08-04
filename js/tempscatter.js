@@ -73,8 +73,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
             .attr("cy", function (d) { return y(d.AverageCityMPG); });
   }
   var brush = d3.brush().on("end", brushended),
-            idleTimeout,
-            idleDelay = 350;
+            idleTimeout,            idleDelay = 350;
   svg.append("g")
             .attr("class", "brush")
             .call(brush).on("dblclick", brushcentered);
@@ -121,7 +120,7 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
           tooltip.transition()
                .duration(100)
                .style("opacity", 1);
-	  tooltip.html("City MPG : " + ymap(d) + " <br/> Hwy MPG : " + xmap(d)")
+	  tooltip.html("City MPG : " + ymap(d) + " <br/> Hwy MPG : " + xmap(d))
                .style("left", (d3.event.pageX + 10) + "px")
                .style("top", (d3.event.pageY - 30) + "px");
       })
