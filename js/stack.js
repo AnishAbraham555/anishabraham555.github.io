@@ -55,7 +55,7 @@ d3.csv("data/Global Superstore.csv", function(dataread) {
 
 	// convert data to stack
 	var stack = d3.stack()
-						.values(function(d){ return d.sales; })
+						.keys(function(d){ return d.sales; })
 						.x(function(d){ return d.year; })
 						.y(function(d){ return d.profit; });
 	var data = stack(dataset);
