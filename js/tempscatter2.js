@@ -4,8 +4,8 @@ var xScale = d3.scaleLog().domain([10,150]).range([0,width]);
 var yScale = d3.scaleLog().domain([10,150]).range([height,0]);
 
 var svg = d3.select("svg"),
-            width = 250,
-            height = 250;
+            width = 1050,
+            height = 450;
 var g = svg.append("g")
             .attr("transform", "translate(" + 50 + "," + 50 + ")");
 
