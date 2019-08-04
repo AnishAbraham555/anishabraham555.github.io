@@ -82,8 +82,8 @@ d3.csv("https://flunky.github.io/cars2017.csv", function(error, data) {
       .call(d3.axisLeft(y))
     .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 0 - margin.left)
-      .attr("x",0 + (height / 2))
+      .attr("y", 0 )
+      .attr("x",0)
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("EngineCylinders");
